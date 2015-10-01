@@ -18,7 +18,7 @@ autoload -U add-zsh-hook
 
 add-zsh-hook chpwd chpwd_update_git_vars
 add-zsh-hook preexec preexec_update_git_vars
-add-zsh-hook precmd precmd_update_git_vars
+#add-zsh-hook precmd precmd_update_git_vars
 
 ## Function definitions
 function preexec_update_git_vars() {
@@ -37,7 +37,7 @@ function precmd_update_git_vars() {
 }
 
 function chpwd_update_git_vars() {
-    update_current_git_vars
+    __EXECUTED_GIT_COMMAND=1
 }
 
 function update_current_git_vars() {
